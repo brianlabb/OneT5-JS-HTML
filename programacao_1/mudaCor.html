@@ -1,0 +1,50 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+ var tela = document.querySelector("canvas");
+ var pincel = tela.getContext("2d");
+ pincel.fillStyle = "lightgreen";
+ pincel.fillRect(0, 0, 600, 400);
+ var cores = ['blue', 'red', 'green']
+ var selecionaCorAtual = 0; //começa com blue.
+ var raio = 10;	// Para que o aumento  da bola ocorra, ao pressionarmos o Shift, a variável precisa estar declarada fora da função.
+
+ function desenhaBola(troca) {
+ var x = troca.pageX - tela.offsetLeft;
+ var y = troca.pageY - tela.offsetTop;
+
+  /*if(troca.shiftKey == true){
+  // pincel.arc(x, y, 20, 0, 2 * 3.14);
+ // pincel.fill();
+  // console.log(x + "," + y);
+  raio = raio + 20;	
+}if(troca.ctrlKey == true){
+
+   raio = raio + 10;
+}*/
+ if(troca.ctrlKey) { // Pressiondo a tecla Shift, será crescido op raio aumentando o tamanho da bola.
+
+   raio = raio + 10;
+  
+    }
+
+ pincel.fillStyle = cores[selecionaCorAtual]; // Inicia com a primeira cor do Array, no caso om Azul.
+ pincel.beginPath();
+ pincel.arc(x, y, raio, 0, 2 * 3.14);
+ pincel.fill();
+ console.log(x + "," + y);  // Imprime no console a coordenadas de X e Y ao clicarmos na tela.
+
+}
+ tela.onclick = desenhaBola;
+
+function mudaCor() {
+	selecionaCorAtual++;
+		if (selecionaCorAtual >= cores.length) {
+	        selecionaCorAtual = 0; // volta para a primeira cor, azul.
+		   }
+		   return false; // para não exibir o menu padrão do canvas.
+	}
+      tela.oncontextmenu = mudaCor;
+
+</script>

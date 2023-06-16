@@ -1,0 +1,23 @@
+<canvas  width="600" height="400"></canvas>
+
+<script>
+ var tela = document.querySelector("canvas");
+ var pincel = tela.getContext("2d");
+
+ pincel.fillStyle = "lightblue";
+ pincel.fillRect(0, 0, 600, 400);
+
+ function exibeCirculo(evento){
+
+ 	 var x = evento.pageX - tela.offsetLeft; // descuta os espaços brancos o retângulo criado.
+ 	 var y = evento.pageY - tela.offsetTop; // considera somente as medidas do retângulo.
+     
+     pincel.fillStyle = " red";
+     pincel.beginPath();
+     pincel.arc(x, y, 10, 0, 2 * 3.14);
+     pincel.fill(); 
+     console.log(x + "," + y);
+ }
+   tela.onclick = exibeCirculo;
+
+</script>

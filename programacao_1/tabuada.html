@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+
+}
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+      var multiplicador; // Variáveis são declaradas antes do loop( While)
+      var numeroTabuada = parseInt(prompt(" Digite o número da tabuada de 0 a 9: ")); //Variáveis são declaradas antes do        
+                                                                                      // loop( While)
+        mostra("A tabuada de " + numeroTabuada + " é: ");
+
+        for(multiplicador = 1; multiplicador <= 9; multiplicador++){
+
+           var resultado = numeroTabuada * multiplicador;
+            mostra(numeroTabuada + " x " + multiplicador + " = " + resultado + ".");
+           
+          }
+            mostra("Fim!");  
+        
+        
+ </script>       
+ 

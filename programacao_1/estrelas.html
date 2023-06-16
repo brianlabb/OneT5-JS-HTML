@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+
+}
+
+    function mostra(frase) {
+
+        document.write(frase);
+        //pulaLinha();
+}
+    var altura = parseInt(prompt(" Digite o valor da altura: "))
+    var largura = parseInt(prompt(" Digite o valor da largura: "))
+
+
+    for(var conta = 1; conta <= altura; conta++)
+     {
+        for(var conta2 = 1; conta2 <= largura; conta2++)
+       {
+           mostra("#");
+       }      
+        mostra("<br>");
+  }
+ 
+</script>

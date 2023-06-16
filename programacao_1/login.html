@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+<script>
+
+    var loginCadastrado = "alura";
+    var senhaCadastrada = "alura321";
+    var nome = "Brian";
+;
+    var tentativa = 1;
+    var vezes = 3;
+    var chance =1;
+
+    while(tentativa <= vezes){ 
+
+    var loginInformado = prompt("Informe seu login");
+    var senhaInformada = prompt("Informe sua senha");
+
+    if( loginCadastrado == loginInformado && senhaCadastrada == senhaInformada ) {
+
+        alert("Bem-vindo ao sistema " + nome);
+        tentativa = vezes;
+        } 
+      else {
+
+          if(tentativa == 3){
+
+          alert("Número de tentativas foi atingido!");
+
+           }else{
+        
+          alert("Login inválido! " + nome + ", você têm mais "+ chance + " tentativas!");
+           chance++;
+    }
+  }
+  tentativa++;
+ }
+
+    mostra("Fim!");
+</script>

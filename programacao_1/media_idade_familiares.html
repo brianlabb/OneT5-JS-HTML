@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+
+}
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+ 
+       var contador = 1;
+       var totalIdades = 0; // Fica fora do while para que não seja iniciado com o valor 0, toda vez que iniciarm o loop.
+       var totalFamilia = parseInt(prompt(" Digite o total de familiares: "));
+       while(contador <= totalFamilia){
+        
+        var idades = parseInt(prompt(" Digite a idade do familiar: "));
+            totalIdades = totalIdades + idades;
+            contador++;  
+         }
+        var mediaIdades = totalIdades / totalFamilia;
+         mostra(" A média das idades do total de familiares é: " + Math.round(mediaIdades));              
+              
+           
+           mostra("Fim!");
+     
+        
+ </script>       
+
+ 
+ 
