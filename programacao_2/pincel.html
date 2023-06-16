@@ -1,0 +1,74 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+var tela = document.querySelector('canvas');
+var pincel = tela.getContext('2d');
+pincel.fillStyle = "orange";
+pincel.fillRect(0, 0, 600, 400);
+
+var desenha = false;
+
+  tela.onmousemove = function(troca){ //atribuindo diretamente a função anônima
+  //function desenhaCirculo(troca){
+
+    var x = troca.pageX - tela.offsetLeft;
+    var y = troca.pageY - tela.offsetTop;
+ if(desenha){
+
+    pincel.fillStyle = "blue";
+    pincel.beginPath();
+    pincel.arc(x, y, 10, 0, 2 * 3.14);
+    pincel.fill();
+ // console.log(x + "," + y);
+     }
+     console.log(x + "," + y);
+  }
+    //tela.onmousemove = desenhaCirculo;
+
+       
+   // atribuindo diretamente a função anônima
+
+   tela.onmousedown = function(){
+
+    desenha = true;
+  }
+
+      // atribuindo diretamente a função anônima
+
+
+   tela.onmouseup = function(){
+
+    desenha = false;
+
+   }
+
+
+
+    function apagaDesenho(troca){
+    
+    var x = troca.pageX - tela.offsetLeft;
+    var y = troca.pageY - tela.offsetTop; 
+    pincel.fillStyle = "orange";
+    pincel.beginPath();
+    pincel.arc(x, y, 10, 0, 2 * 3.14);
+    pincel.fill();
+    console.log(x + "," + y);
+    
+     }
+
+     tela.oncontextmenu = apagaDesenho;
+
+     tela.onmouseup = habilitaDesenho;
+
+     tela.onmousedown = desabilitaDesenho;
+
+
+     
+  
+
+
+    
+
+
+</script>
