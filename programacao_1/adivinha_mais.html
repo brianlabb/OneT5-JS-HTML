@@ -1,0 +1,73 @@
+<meta charset="UTF-8">
+
+<input/>
+<button> Compare com o meu valor!</button>
+
+<script>
+	      function aleatorio(){
+
+          return Math.round(Math.random() * 10);
+        }
+
+        function sorteiaNumeros(quantidade){
+
+            var valores = [];
+            
+            var numero = 1;
+          
+          while(numero <= quantidade){
+
+            var numeroAleatorio = aleatorio();
+
+            if(numeroAleatorio !== 0){
+
+            var existe = false;
+
+            for(var posicao = 0; posicao <= valores.length; posicao++){
+
+             if(valores[posicao] == numeroAleatorio){
+                existe = true;
+                break;
+               }
+             }
+             
+            if(existe == false){
+
+                valores.push(numeroAleatorio);
+                numero++;
+               }
+                  
+              }
+              return valores;
+            }
+
+       var valores = sorteiaNumeros(5);
+       console.log(valores);
+
+	     var input = document.querySelector("input");   
+                                                        // Faz o link do javaScript com o HTML,
+	       
+         input.focus(); // Ativa a caixa de entrada     // neste caso a variável input está pegando o valor de <input>(HTML)
+	                                                    //input.value pega o valor digitado no campo criado.
+        function verifica(){
+      
+         if(input.value == segredo)
+         {
+         	alert(" Você acertou");
+         
+         }else{
+
+         	alert("Você errou!");
+         }
+           input.value = "";  // Zera o valor da caixa de entrada.
+           input.focus();     // Deixa a caixa de texto destacada.
+      }
+
+       var button = document.querySelector("button"); // Faz o link do javaScript com o HTML,
+                                                      // neste caso a variável "button" está pegando
+                                                      // o valor de <button>(HTML)    
+      
+       button.onclick = verifica;  // Copia os dados da função para o 
+                                   //botão, que ao clicar irfá exercutar a função.                                                                
+
+</script>
